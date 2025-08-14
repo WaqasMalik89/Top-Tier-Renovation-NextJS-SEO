@@ -1,14 +1,14 @@
 import Image from 'next/image';
 
 const portfolioItems = [
-  { src: '/images/UploadedImage0.jpg', alt: 'Beautifully landscaped garden project 1' },
-  { src: '/images/UploadedImage1.jpg', alt: 'Beautifully landscaped garden project 2' },
-  { src: '/images/UploadedImage3.jpg', alt: 'Beautifully landscaped garden project 3' },
-  { src: '/images/UploadedImage4.jpg', alt: 'Beautifully landscaped garden project 4' },
-  { src: '/images/UploadedImage5.jpg', alt: 'Beautifully landscaped garden project 5' },
-  { src: '/images/UploadedImage6.jpg', alt: 'Beautifully landscaped garden project 6' },
-  { src: '/images/UploadedImage7.jpg', alt: 'Beautifully landscaped garden project 7' },
-  { src: '/images/UploadedImage8.jpg', alt: 'Beautifully landscaped garden project 8' },
+  { src: '/images/uploaded-image-0.jpg', alt: 'Beautifully landscaped garden project 1' },
+  { src: '/images/uploaded-image-1.jpg', alt: 'Beautifully landscaped garden project 2' },
+  { src: '/images/uploaded-image-2.jpg', alt: 'Beautifully landscaped garden project 3' },
+  { src: '/images/uploaded-image-3.jpg', alt: 'Beautifully landscaped garden project 4' },
+  { src: '/images/uploaded-image-4.jpg', alt: 'Beautifully landscaped garden project 5' },
+  { src: '/images/uploaded-image-5.jpg', alt: 'Beautifully landscaped garden project 6' },
+  { src: '/images/uploaded-image-6.jpg', alt: 'Beautifully landscaped garden project 7' },
+  { src: '/images/uploaded-image-7.jpg', alt: 'Beautifully landscaped garden project 8' },
 ];
 
 export default function Portfolio() {
