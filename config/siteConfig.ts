@@ -24,7 +24,7 @@ export interface SiteConfig {
     description: "We provide cutting-edge services to help your business grow and thrive in the digital age.",
     keywords: ["innovation", "technology", "business solutions"],
     author: "Waqas Malik",
-    url: "https://www.toptier-tenovation.com",
+    url: "https://www.toptier-renovation.com",
     ogImage: "/og-image.jpg",
   
     address: {
