@@ -19,10 +19,20 @@ export interface SiteConfig {
   }
   
   const siteConfig: SiteConfig = {
-    name: "Top Tier Tenovation",
-    title: "Top Tier Tenovation - Innovative Solutions for Your Business",
-    description: "We provide cutting-edge services to help your business grow and thrive in the digital age.",
-    keywords: ["innovation", "technology", "business solutions"],
+    name: "Top Tier Renovation",
+    title: "Top Tier Renovation Services | Landscaping & Home Improvements in GTA",
+    description: "Transform your home and outdoor spaces with premium landscaping, renovation, and remodeling services across Toronto, Mississauga, Brampton, Vaughan, and the GTA.",
+    keywords: [
+      "home renovation", 
+      "landscaping services", 
+      "GTA renovation", 
+      "garden design", 
+      "outdoor remodeling", 
+      "Toronto renovation", 
+      "home improvement GTA", 
+      "patio construction",
+      "Lights"
+  ],
     author: "Waqas Malik",
     url: "https://www.toptier-renovation.com",
     ogImage: "/og-image.jpg",
