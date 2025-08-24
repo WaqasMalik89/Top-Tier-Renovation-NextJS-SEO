@@ -1,6 +1,6 @@
-import Head from 'next/head';  // Import component to manage the <head> section of the HTML page (for SEO/meta tags)
+import Head from "next/head";
 import Script from 'next/script';  // Import component to load external scripts in an optimized way
-
+import siteConfig from "../config/siteConfig";
 // These components mostly render static content or server-side rendered content
 import Services from '../components/Services';  // Shows the list of services offered
 import Portfolio from '../components/Portfolio';  // Displays past projects or portfolio items
@@ -10,64 +10,48 @@ import Testimonials from '../components/Testimonials';  // Shows customer review
 import HeroCarousel from '../components/HeroBannerCarousel';  // A sliding banner at the top of the homepage
 import ContactForm from '../components/ContactForm';  // Form for visitors to send messages or inquiries
 
-// The main component for the homepage
 export default function Home() {
   return (
     <>
-      {/* Setup the page's metadata for SEO and social sharing */}
       <Head>
-        {/* Title shown on browser tab and search results */}
-        <title>Top Tier Renovation Services | Landscaping in GTA</title>
+        <title>{siteConfig.title}</title>
+        <meta name="description" content={siteConfig.description} />
+        <meta name="robots" content={siteConfig.robots} />
+        <link rel="canonical" href={siteConfig.canonical} />
 
-        {/* Description shown in search results */}
-        <meta
-          name="description"
-          content="Transform your outdoor space with premium landscaping and renovation services across GTA and nearby areas."
-        />
+        {/* Open Graph */}
+        <meta property="og:title" content={siteConfig.og.title} />
+        <meta property="og:description" content={siteConfig.og.description} />
+        <meta property="og:url" content={siteConfig.og.url} />
+        <meta property="og:type" content={siteConfig.og.type} />
+        <meta property="og:image" content={siteConfig.og.image} />
 
-        {/* Tell search engines to index and follow links on this page */}
-        <meta name="robots" content="index, follow" />
-
-        {/* The preferred URL of this page */}
-        <link rel="canonical" href="https://yourdomain.com/" />
-
-        {/* Open Graph tags for social media previews (Facebook, LinkedIn, etc.) */}
-        <meta property="og:title" content="Top Tier Renovation Services | Landscaping in GTA" />
-        <meta
-          property="og:description"
-          content="Transform your outdoor space with premium landscaping and renovation services across GTA and nearby areas."
-        />
-        <meta property="og:url" content="https://yourdomain.com/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
-
-        {/* Twitter Card tags for Twitter previews */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Top Tier Renovation Services | Landscaping in GTA" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content={siteConfig.twitter.card} />
+        <meta name="twitter:title" content={siteConfig.twitter.title} />
         <meta
           name="twitter:description"
-          content="Transform your outdoor space with premium landscaping and renovation services across GTA and nearby areas."
+          content={siteConfig.twitter.description}
         />
-        <meta name="twitter:image" content="https://yourdomain.com/twitter-image.jpg" />
+        <meta name="twitter:image" content={siteConfig.twitter.image} />
       </Head>
+        {/* Render interactive hero banner carousel */}
+        <HeroCarousel />
 
-      {/* Render interactive hero banner carousel */}
-      <HeroCarousel />
+{/* Main page content container with some padding and max width */}
+<main style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px' }}>
+  {/* Section showing offered services */}
+  <Services />
+  {/* Section showing past portfolio projects */}
+  <Portfolio />
+  {/* Section showing customer testimonials */}
+  <Testimonials />
+  {/* Contact form so visitors can send messages */}
+  <ContactForm />
+</main>
 
-      {/* Main page content container with some padding and max width */}
-      <main style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px' }}>
-        {/* Section showing offered services */}
-        <Services />
-        {/* Section showing past portfolio projects */}
-        <Portfolio />
-        {/* Section showing customer testimonials */}
-        <Testimonials />
-        {/* Contact form so visitors can send messages */}
-        <ContactForm />
-      </main>
-
-      {/* Load any additional JavaScript file after the page is interactive */}
-      <Script src="/js/script.js" strategy="afterInteractive" />
+{/* Load any additional JavaScript file after the page is interactive */}
+<Script src="/js/script.js" strategy="afterInteractive" />
     </>
   );
 }
