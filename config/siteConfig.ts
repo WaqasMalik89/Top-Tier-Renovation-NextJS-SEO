@@ -39,6 +39,7 @@ const siteConfig: SiteConfig = {
     "Transform your home and outdoor spaces with premium landscaping, renovation, and remodeling services across Toronto, Mississauga, Brampton, Vaughan, and the GTA.",
     keywords: [
       // Renovation
+      "top renovation",
       "home renovation GTA",
       "house remodeling Toronto",
       "kitchen renovation Toronto",
@@ -79,12 +80,12 @@ const siteConfig: SiteConfig = {
   robots: "index, follow",
 
   og: {
-    title: "Top Tier Renovation Services | Landscaping in GTA",
+    title: "Top Renovations | Landscaping in GTA",
     description:
       "Transform your outdoor space with premium landscaping and renovation services across GTA and nearby areas.",
     url: "https://top-tier-renovation-next-js-seo.vercel.app/",
     type: "website",
-    image: "https://top-tier-renovation-next-js-seo.vercel.app/og-image.jpg",
+    image: "https://top-tier-renovation-next-js-seo.vercel.app/og-image.png",
   },
 
   twitter: {
@@ -92,7 +93,7 @@ const siteConfig: SiteConfig = {
     title: "Top Tier Renovation Services | Landscaping in GTA",
     description:
       "Transform your outdoor space with premium landscaping and renovation services across GTA and nearby areas.",
-    image: "https://top-tier-renovation-next-js-seo.vercel.app/twitter-image.jpg",
+    image: "https://top-tier-renovation-next-js-seo.vercel.app/twitter-image.png",
   },
 
   address: {
