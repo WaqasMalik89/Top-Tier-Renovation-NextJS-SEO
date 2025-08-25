@@ -85,7 +85,7 @@ const siteConfig: SiteConfig = {
       "Transform your outdoor space with premium landscaping and renovation services across GTA and nearby areas.",
     url: "https://top-tier-renovation-next-js-seo.vercel.app/",
     type: "website",
-    image: "https://top-tier-renovation-next-js-seo.vercel.app/og-image-logo1.png",
+    image: "https://top-tier-renovation-next-js-seo.vercel.app/og-image-logo3.png",
   },
 
   twitter: {
