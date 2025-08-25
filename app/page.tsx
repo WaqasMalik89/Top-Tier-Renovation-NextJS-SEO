@@ -25,6 +25,8 @@ export default function Home() {
         <meta property="og:url" content={siteConfig.og.url} />
         <meta property="og:type" content={siteConfig.og.type} />
         <meta property="og:image" content={siteConfig.og.image} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content={siteConfig.twitter.card} />
