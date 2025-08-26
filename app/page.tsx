@@ -51,9 +51,6 @@ export default function Home() {
   {/* Contact form so visitors can send messages */}
   <ContactForm />
 </main>
-
-{/* Load any additional JavaScript file after the page is interactive */}
-<Script src="/js/script.js" strategy="afterInteractive" />
     </>
   );
 }
