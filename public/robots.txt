@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://top-tier-renovation-next-js-seo.vercel.app/sitemap2.xml
+Sitemap: https://top-tier-renovation-next-js-seo.vercel.app/sitemap-index.xml
