@@ -33,8 +33,8 @@ export default function HeroCarousel() {
 
   return (
     <header className="hero" style={heroStyle}>
-      <h1>Transform Your Outdoor Space</h1>
-      <p>Premium Landscaping Services in GTA & Nearby Areas</p>
+      <h1>Transform Your Space. Live Your Dream Home</h1>
+      <p>Premium Home Renovation and Landscaping Services for GTA & Surrounding Areas</p>
       <div className="cta-buttons" style={{ marginTop: 20 }}>
         <a href="#contact" className="btn">
           Get a Free Quote

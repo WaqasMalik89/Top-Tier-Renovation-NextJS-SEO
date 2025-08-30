@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import ImageModal from './ImageModal'; // client-side modal
 
 const portfolioItems = [
   { src: '/images/uploaded-image-0.jpg', alt: 'Beautifully landscaped garden project 1' },
@@ -14,7 +15,7 @@ const portfolioItems = [
 export default function Portfolio() {
   return (
     <section id="portfolio" style={{ marginBottom: 40 }}>
-      <h2>Portfolio</h2>
+      <h2 style={{ textAlign: 'center', marginBottom: 20 }}>Portfolio</h2>
       <div
         style={{
           display: 'flex',
@@ -24,15 +25,16 @@ export default function Portfolio() {
         }}
       >
         {portfolioItems.map(({ src, alt }) => (
-          <Image
-            key={src}
-            src={src}
-            alt={alt}
-            width={300}
-            height={200}
-            style={{ objectFit: 'cover', borderRadius: 8 }}
-            priority={false}
-          />
+          <ImageModal key={src} src={src} alt={alt}>
+            <Image
+              src={src}
+              alt={alt}
+              width={300}
+              height={200}
+              style={{ objectFit: 'cover', borderRadius: 8 }}
+              priority={false}
+            />
+          </ImageModal>
         ))}
       </div>
     </section>

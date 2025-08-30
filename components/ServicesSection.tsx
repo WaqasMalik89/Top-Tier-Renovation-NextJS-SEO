@@ -2,12 +2,12 @@ import styles from "./ServicesSection.module.css";
 
 export default function ServicesSection() {
   const services = [
-    "Landscape Design",
-    "Interlocking & Stonework",
-    "Hardscape Lighting",
-    "Garden Installation",
-    "Sod & Turf",
-    "Seasonal Maintenance",
+    'Home Renovation',
+    'Finished Legal Basement',
+    'Custom Landscape Design & Planning',
+    'Interlocking Pavers & Hardscaping',
+    'Lighting & Illumination Solutions',
+    'Garden Installation, Sod & Turf',
   ];
 
   return (
