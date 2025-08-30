@@ -73,6 +73,14 @@ export default function Portfolio() {
     // Don't run animations if required elements aren't ready yet
     if (!portfolioRef.current || !sectionRef.current || imagesRef.current.length === 0) return;
 
+    // Set the initial state for all portfolio items before animation begins
+    // This makes them invisible, slightly down and scaled down for the entrance effect
+    gsap.set(imagesRef.current, {
+      opacity: 0,        // Make completely transparent
+      y: 30,             // Position 30 pixels down from normal position
+      scale: 0.95,       // Shrink to 95% of normal size
+    });
+
     // Get references to the title and filter buttons for animation
     const titleElement = sectionRef.current.querySelector('h2');
     const filterButtonsElement = sectionRef.current.querySelector(`.${styles.filterButtons}`);
@@ -82,9 +90,10 @@ export default function Portfolio() {
       // Configure ScrollTrigger to start animations when user scrolls to this section
       scrollTrigger: {
         trigger: sectionRef.current, // Element that triggers the animation
-        start: 'top 90%',           // Start when top of element is 90% down the viewport
-        end: 'bottom 10%',          // End when bottom is 10% from top of viewport
-        toggleActions: 'play reverse play reverse', // Play forward on enter, reverse on leave, and repeat on scroll back
+        start: 'top 90%',           // Start when top of element is 85% down the viewport
+        end: 'bottom 10%',          // End when bottom is 20% from top of viewport
+        toggleActions: 'play none play reverse', // Play forward on enter, reverse on leave
+        anticipatePin: 1,    
       },
     });
 
@@ -105,54 +114,41 @@ export default function Portfolio() {
       );
     }
 
-    // Animation 3: Individual animations for each portfolio item
-    imagesRef.current.forEach((image, i) => {
+    // Animation 3: Staggered grid items animation
+    masterTl.to(imagesRef.current, {
+      opacity: 1,        // Fade to fully visible
+      y: 0,              // Move to normal vertical position
+      scale: 1,          // Scale to normal size (100%)
+      stagger: {         // Stagger the animations for a cascading effect
+        amount: 0.5,     // Total time for all staggered animations
+        from: 'center',  // Start animations from the center outward
+        grid: 'auto',    // Use the natural grid layout
+      },
+      duration: 0.8,     // Each animation takes 0.8 seconds to complete
+      ease: 'power2.out', // Use a smooth easing function
+    });
+
+    // Animation 4: Add hover effects to each portfolio item
+    imagesRef.current.forEach((image) => {
       // Skip if this image reference is empty
       if (!image) return;
-
-      // Determine slide direction based on index (even: left, odd: right)
-      const fromX = i % 2 === 0 ? -100 : 100;
-
-      // Create individual animation for each portfolio item
-      gsap.fromTo(
-        image, // Element to animate
-        { 
-          opacity: 0,   // Start invisible
-          x: fromX,     // Start offscreen (left or right based on index)
-          scale: 0.95   // Start slightly smaller
-        },
-        {
-          opacity: 1,   // End visible
-          x: 0,         // End at normal horizontal position
-          scale: 1,     // End at normal size
-          duration: 0.8, // Animation takes 0.8 seconds
-          ease: 'power2.out', // Smooth easing function
-          scrollTrigger: {
-            trigger: image, // This specific image triggers its own animation
-            start: 'top 90%', // Start when top of image is 90% down viewport
-            end: 'bottom 10%', // End when bottom is 10% from top of viewport
-            toggleActions: 'play reverse play reverse', // Play forward on enter, reverse on leave
-          },
-          delay: i * 0.1, // Stagger the animations based on index
-        }
-      );
-
-      // Hover animation - when mouse moves over an image
+      
+      // When mouse moves over an image
       image.addEventListener('mouseenter', () => {
-        // Animate the portfolio item container
+        // Animate the image to appear to lift up and grow slightly
         gsap.to(image, {
-          scale: 1.09,     // Enlarge to 109% size
+          scale: 1.09,     // Enlarge to 102% size
           y: -5,           // Move 5 pixels upward
           boxShadow: '0 10px 25px rgba(0,0,0,0.15)', // Enhance shadow for "lifted" effect
           duration: 0.3,   // Animation takes 0.3 seconds
           ease: 'power2.out', // Smooth easing function
         });
         
-        // Animate the image inside the container separately
+        // Animate the image inside the container
         const imgElement = image.querySelector('img');
         if (imgElement) {
           gsap.to(imgElement, {
-            scale: 1.03,   // Slightly enlarge the image itself
+            scale: 1.03,   // Enlarge image to 103% size
             duration: 0.4, // Slightly longer duration for smoother effect
             ease: 'power2.out', // Smooth easing function
           });
@@ -161,7 +157,7 @@ export default function Portfolio() {
 
       // When mouse moves away from an image
       image.addEventListener('mouseleave', () => {
-        // Return the portfolio item to its normal state
+        // Return the image to its normal state
         gsap.to(image, {
           scale: 1,       // Return to normal size
           y: 0,           // Return to normal position
@@ -273,7 +269,7 @@ export default function Portfolio() {
                   src={src} // Image path
                   alt={alt} // Accessibility description
                   fill // Fill the container (requires parent with position: relative)
-                  sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 300px" // Responsive sizing
+                  sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 300px"
                   className={styles.portfolioImage} // Apply CSS styles
                   priority={index < 4} // Load first 4 images with high priority
                 />
