@@ -56,7 +56,7 @@ export default function ContactForm() {
         </button>
       </form>
       {status && <p>{status}</p>}
-      <p>Email: mail.waqas.malik@gmail.com | Phone: (647) 299-9100</p>
+      <p>Email: mail.waqas.malik@gmail.com | Cell: (647) 299-9100 | Office: (519) 996-8678</p>
       <p>
         Serving Toronto, Brampton, Mississauga, Milton, Guelph, Vaughan, Bradford,
         Barrie, Newmarket and the GTA

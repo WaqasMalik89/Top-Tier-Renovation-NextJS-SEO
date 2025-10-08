@@ -32,9 +32,6 @@ const portfolioItems = [
   { src: '/images/uploaded-image-5.jpg', alt: 'Quality Craftmanship with precision', category: 'landscaping' },
   { src: '/images/uploaded-image-6.jpg', alt: 'Natural Stone Steps Installation', category: 'hardscaping' },
   { src: '/images/uploaded-image-7.jpg', alt: 'Decorative Retaining Wall with Paved Driveway', category: 'hardscaping' },
-  { src: '/images/uploaded-image-8.jpg', alt: 'Finished basement featuring a sleek, functional kitchenette with modern fixtures.', category: 'hardscaping' },
-  { src: '/images/uploaded-image-9.jpg', alt: 'Decorative Retaining Wall with Paved Driveway', category: 'hardscaping' },
-  { src: '/images/uploaded-image-10.jpg', alt: 'Side entryway with steps leading to a sheltered exterior door.', category: 'hardscaping' },
 ];
 
 // Main Portfolio component that displays our projects
