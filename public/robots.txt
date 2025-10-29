@@ -1,4 +1,2 @@
 User-agent: *
-Disallow: /
-
-Sitemap: https://www.canvasbuilds.ca/sitemap.xml
+Allow: /
